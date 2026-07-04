@@ -1,0 +1,623 @@
+STATE,DISTRICT,Year,WL_Actual,WL_Predicted
+Andhra Pradesh,Alluri Sitharama Raju,2023,3.07561,2.8352625
+Andhra Pradesh,Anakapalli,2023,3.725,3.469613
+Andhra Pradesh,Ananthapuramu,2023,8.634375,8.4550295
+Andhra Pradesh,Annamayya,2023,10.564102,11.111343
+Andhra Pradesh,Bapatla,2023,3.078261,2.9568133
+Andhra Pradesh,Chittoor,2023,6.677778,6.2703357
+Andhra Pradesh,East Godavari,2023,4.45,4.091736
+Andhra Pradesh,Eluru,2023,4.7,4.049477
+Andhra Pradesh,Guntur,2023,2.0954547,2.252953
+Andhra Pradesh,Kakinada,2023,2.9708333,2.9254134
+Andhra Pradesh,Krishna,2023,1.7576923,2.0863333
+Andhra Pradesh,Kurnool,2023,4.690909,5.0405493
+Andhra Pradesh,Nandyal,2023,4.75,4.97887
+Andhra Pradesh,Ntr,2023,3.952174,4.0740523
+Andhra Pradesh,Palnadu,2023,5.4057693,5.588674
+Andhra Pradesh,Parvathipuram Manyam,2023,3.6850002,3.7038705
+Andhra Pradesh,Prakasam,2023,12.230232,11.005696
+Andhra Pradesh,Sri Sathya Sai,2023,6.9813952,6.0616064
+Andhra Pradesh,Srikakulam,2023,2.675,2.62705
+Andhra Pradesh,Tirupati,2023,4.4405403,4.6155505
+Andhra Pradesh,Visakhapatnam,2023,4.2142854,4.0023026
+Andhra Pradesh,Vizianagaram,2023,3.2181818,3.322419
+Andhra Pradesh,West Godavari,2023,6.312,5.6487613
+Arunachal Pradesh,Changlang,2023,1.3250003,1.7882342
+Arunachal Pradesh,East Siang,2023,2.2199998,2.2044125
+Arunachal Pradesh,Lohit,2023,0.30000016,1.4790807
+Arunachal Pradesh,Lower Dibang Valley,2023,8.8,7.573986
+Arunachal Pradesh,Lower Subansiri,2023,0.59999985,1.5638309
+Arunachal Pradesh,Papum Pare,2023,2.29,2.381851
+Arunachal Pradesh,Tirap,2023,2.2333336,2.3809638
+Assam,Baksa,2023,2.0,2.066381
+Assam,Barpeta,2023,0.84999985,1.6031895
+Assam,Biswanath,2023,1.5384617,1.8637304
+Assam,Bongaigaon,2023,1.5545454,1.8984728
+Assam,Cachar,2023,1.0176468,1.6775446
+Assam,Chirang,2023,2.35,2.2181864
+Assam,Darrang,2023,2.43,2.2698078
+Assam,Dhemaji,2023,1.0888886,1.6836929
+Assam,Dhubri,2023,4.9714284,4.6553226
+Assam,Dibrugarh,2023,2.1200004,2.186953
+Assam,Goalpara,2023,1.8692307,2.0059967
+Assam,Golaghat,2023,2.6909091,2.4639034
+Assam,Hailakandi,2023,1.5799999,1.9065452
+Assam,Hojai,2023,4.6666665,4.234639
+Assam,Jorhat,2023,0.77272695,1.5741172
+Assam,Kamrup,2023,2.1789474,2.1844764
+Assam,Kamrup Metro,2023,0.80000013,1.5684171
+Assam,Karbi Anglong,2023,4.264516,3.807843
+Assam,Karimganj,2023,0.8733334,1.6005154
+Assam,Kokrajhar,2023,2.2727275,2.2595892
+Assam,Lakhimpur,2023,0.95882314,1.6712623
+Assam,Marigaon,2023,2.876923,2.565756
+Assam,Nagaon,2023,2.5272727,2.452176
+Assam,Nalbari,2023,1.5750003,1.8767223
+Assam,Sivasagar,2023,2.3250003,2.4303634
+Assam,Sonitpur,2023,1.2846155,1.87603
+Assam,Tinsukia,2023,0.90909094,1.771934
+Assam,Udalguri,2023,1.7238092,2.0469956
+Assam,West Karbi Anglong,2023,3.68,3.4352593
+Bihar,Araria,2023,1.7727275,1.9242835
+Bihar,Arwal,2023,4.3375,3.7287498
+Bihar,Aurangabad,2023,4.4857144,3.8782248
+Bihar,Banka,2023,3.5,3.0756989
+Bihar,Begusarai,2023,3.122857,3.041212
+Bihar,Bhagalpur,2023,2.25,2.35061
+Bihar,Bhojpur,2023,4.548485,3.9536502
+Bihar,Buxar,2023,4.45,3.8313668
+Bihar,Darbhanga,2023,2.1473684,2.178957
+Bihar,Gaya,2023,4.6238093,4.1020474
+Bihar,Gopalganj,2023,2.7450001,2.4941213
+Bihar,Jamui,2023,4.415385,4.103909
+Bihar,Jehanabad,2023,4.8714285,4.2084694
+Bihar,Katihar,2023,2.6352942,2.5294478
+Bihar,Khagaria,2023,3.1235294,2.8953981
+Bihar,Kishanganj,2023,1.4499998,1.8539772
+Bihar,Lakhisarai,2023,2.9230769,2.8127337
+Bihar,Madhepura,2023,2.7235296,2.5730543
+Bihar,Madhubani,2023,1.7379308,2.005046
+Bihar,Munger,2023,3.9666667,3.5462291
+Bihar,Muzaffarpur,2023,3.1782608,2.9755986
+Bihar,Nalanda,2023,4.3485713,3.9166117
+Bihar,Nawada,2023,4.0125,3.78123
+Bihar,Pashchim Champaran,2023,2.1222224,2.166923
+Bihar,Patna,2023,2.6892858,2.5735102
+Bihar,Purnia,2023,2.35,2.3817012
+Bihar,Rohtas,2023,3.3812501,3.344484
+Bihar,Saharsa,2023,2.0500002,2.2030516
+Bihar,Samastipur,2023,4.895,4.682087
+Bihar,Saran,2023,2.702857,2.5984967
+Bihar,Sheikhpura,2023,4.59,4.0214453
+Bihar,Sheohar,2023,3.125,2.9178796
+Bihar,Sitamarhi,2023,2.0541668,2.2213612
+Bihar,Siwan,2023,2.7923079,2.6181443
+Bihar,Supaul,2023,2.2526312,2.3755136
+Bihar,Vaishali,2023,3.162963,2.9484751
+Chandigarh,Chandigarh,2023,10.233334,9.729393
+Chhattisgarh,Balod,2023,3.32,3.1663663
+Chhattisgarh,Balodabazar-Bhatapara,2023,3.0657144,2.7906296
+Chhattisgarh,Bastar,2023,2.54375,2.5510962
+Chhattisgarh,Bemetara,2023,3.723913,3.5064259
+Chhattisgarh,Bilaspur,2023,4.572414,4.2000346
+Chhattisgarh,Dhamtari,2023,2.5611112,2.4616532
+Chhattisgarh,Durg,2023,1.9000001,2.093276
+Chhattisgarh,Gariyaband,2023,3.9157896,3.3149548
+Chhattisgarh,Janjgir-Champa,2023,2.9307692,2.8141632
+Chhattisgarh,Jashpur,2023,4.1612496,3.9326932
+Chhattisgarh,Kondagaon,2023,1.1666665,1.8573837
+Chhattisgarh,Korba,2023,3.81125,3.649261
+Chhattisgarh,Mahasamund,2023,3.0187502,2.701454
+Chhattisgarh,Mungeli,2023,3.4250002,3.1132221
+Chhattisgarh,Raigarh,2023,3.422353,3.0233135
+Chhattisgarh,Raipur,2023,2.5761905,2.585529
+Chhattisgarh,Rajnandgaon,2023,2.525532,2.565865
+Chhattisgarh,Surajpur,2023,4.5035086,4.205281
+Chhattisgarh,Surguja,2023,4.2878785,3.7747471
+Delhi,Central,2023,3.5400002,3.4319274
+Delhi,East,2023,13.0,12.687473
+Delhi,Nazul Land,2023,8.45,8.063197
+Delhi,New Delhi,2023,21.578571,19.646593
+Delhi,North,2023,8.686956,8.680633
+Delhi,North East,2023,19.433332,17.504362
+Delhi,North West,2023,3.5285716,3.596406
+Delhi,Shahdara,2023,18.1,16.63485
+Delhi,South,2023,31.037498,30.834755
+Delhi,South East,2023,10.381818,8.450908
+Delhi,South West,2023,8.55,8.449341
+Delhi,West,2023,11.081818,10.695762
+Goa,North Goa,2023,4.092857,4.17554
+Goa,South Goa,2023,4.8219514,4.519321
+Gujarat,Ahmedabad,2023,4.5444446,4.153337
+Gujarat,Amreli,2023,6.805128,6.2754154
+Gujarat,Anand,2023,8.064285,7.703742
+Gujarat,Arvalli,2023,7.5571427,6.515229
+Gujarat,Banas Kantha,2023,17.407692,16.674881
+Gujarat,Bharuch,2023,3.8555555,3.6733315
+Gujarat,Bhavnagar,2023,4.2833333,4.4339247
+Gujarat,Botad,2023,3.5833333,3.3984597
+Gujarat,Chhotaudepur,2023,4.563158,3.9446902
+Gujarat,Dahod,2023,5.1571426,4.7402735
+Gujarat,Dangs,2023,2.1166668,2.436659
+Gujarat,Devbhumi Dwarka,2023,3.338889,3.594235
+Gujarat,Gandhinagar,2023,19.4,17.006824
+Gujarat,Gir Somnath,2023,3.65,4.008189
+Gujarat,Jamnagar,2023,2.1695652,2.6492755
+Gujarat,Junagadh,2023,3.9571428,3.79202
+Gujarat,Kachchh,2023,9.873585,9.77416
+Gujarat,Kheda,2023,10.333333,10.215861
+Gujarat,Mahesana,2023,7.9129033,7.5052433
+Gujarat,Mahisagar,2023,4.922222,4.3162513
+Gujarat,Morbi,2023,3.2562501,3.4152424
+Gujarat,Narmada,2023,6.6266665,5.856017
+Gujarat,Navsari,2023,2.81,3.0225563
+Gujarat,Panch Mahals,2023,6.195652,5.483943
+Gujarat,Patan,2023,6.77,6.239638
+Gujarat,Porbandar,2023,3.3307693,3.694909
+Gujarat,Rajkot,2023,3.09375,3.405524
+Gujarat,Sabar Kantha,2023,10.514814,9.480911
+Gujarat,Surat,2023,3.642857,3.6711895
+Gujarat,Surendranagar,2023,3.6944444,3.7024686
+Gujarat,Tapi,2023,4.422222,4.220634
+Gujarat,Vadodara,2023,10.573333,10.333548
+Gujarat,Valsad,2023,3.3437502,3.3802304
+Haryana,Ambala,2023,8.066667,7.1260586
+Haryana,Bhiwani,2023,9.030435,8.72291
+Haryana,Charki Dadri,2023,4.1666665,4.1755705
+Haryana,Faridabad,2023,22.1,20.993431
+Haryana,Fatehabad,2023,21.071428,22.76884
+Haryana,Gurugram,2023,22.8,22.439938
+Haryana,Hisar,2023,7.0842104,6.012829
+Haryana,Jhajjar,2023,1.8200002,2.2983365
+Haryana,Jind,2023,18.253845,16.92029
+Haryana,Kaithal,2023,18.133333,19.726006
+Haryana,Karnal,2023,24.166666,21.66632
+Haryana,Kurukshetra,2023,40.55,35.89477
+Haryana,Mahendragarh,2023,3.5,3.9902368
+Haryana,Nuh,2023,2.45,3.0060134
+Haryana,Palwal,2023,10.0,9.45294
+Haryana,Panchkula,2023,9.111765,8.47968
+Haryana,Panipat,2023,9.316667,7.955572
+Haryana,Rewari,2023,15.849999,15.331868
+Haryana,Rohtak,2023,2.8000002,2.9580219
+Haryana,Sirsa,2023,11.171428,10.226482
+Haryana,Sonipat,2023,6.169231,5.527745
+Haryana,Yamunanagar,2023,7.2090907,7.1095414
+Himachal Pradesh,Hamirpur,2023,4.65,4.3254976
+Himachal Pradesh,Kangra,2023,2.0885715,2.4218252
+Himachal Pradesh,Kullu,2023,3.35,3.403296
+Himachal Pradesh,Mandi,2023,2.4285712,2.6025257
+Himachal Pradesh,Sirmaur,2023,6.792308,6.351122
+Himachal Pradesh,Solan,2023,11.679999,10.409442
+Himachal Pradesh,Una,2023,5.721875,5.287997
+Jammu & Kashmir,Baramulla,2023,2.163125,2.5347831
+Jammu & Kashmir,Jammu,2023,6.1021976,5.671103
+Jammu & Kashmir,Kathua,2023,8.166667,7.946803
+Jammu & Kashmir,Kupwara,2023,3.0777779,3.3252149
+Jammu & Kashmir,Pulwama,2023,7.9,7.1473584
+Jammu & Kashmir,Rajouri,2023,2.6692307,3.0229504
+Jammu & Kashmir,Reasi,2023,17.761538,18.207016
+Jammu & Kashmir,Samba,2023,6.574359,5.9610143
+Jammu & Kashmir,Srinagar,2023,4.2,4.1021104
+Jammu & Kashmir,Udhampur,2023,3.1470587,3.420782
+Jharkhand,Bokaro,2023,3.7,3.4174848
+Jharkhand,Chatra,2023,3.48,3.5151105
+Jharkhand,Deoghar,2023,5.1363635,4.850956
+Jharkhand,Dhanbad,2023,4.0111113,3.499306
+Jharkhand,Dumka,2023,4.5588236,4.0939317
+Jharkhand,Garhwa,2023,3.009091,2.8717136
+Jharkhand,Giridih,2023,3.117647,3.0135083
+Jharkhand,Godda,2023,3.4933333,3.4253328
+Jharkhand,Gumla,2023,2.92,2.629613
+Jharkhand,Hazaribagh,2023,4.5730767,4.3644958
+Jharkhand,Jamtara,2023,3.4444444,3.1168003
+Jharkhand,Khunti,2023,2.7153847,2.6117082
+Jharkhand,Koderma,2023,3.42,3.09219
+Jharkhand,Latehar,2023,4.325,4.124057
+Jharkhand,Lohardaga,2023,6.4363637,6.0637107
+Jharkhand,Pakur,2023,1.9000001,2.08541
+Jharkhand,Palamu,2023,3.6777778,3.2960892
+Jharkhand,Ramgarh,2023,4.1411767,4.159627
+Jharkhand,Ranchi,2023,4.8792453,4.8294964
+Jharkhand,Sahebganj,2023,2.3578947,2.6403801
+Jharkhand,Saraikela Kharsawan,2023,1.4272728,1.8631954
+Jharkhand,Simdega,2023,2.2857141,2.2124157
+Jharkhand,West Singhbhum,2023,1.96875,2.1812325
+Karnataka,Bagalkote,2023,6.8519998,6.7182446
+Karnataka,Ballari,2023,4.9,4.9945836
+Karnataka,Belagavi,2023,5.4884615,5.6517916
+Karnataka,Bengaluru Rural,2023,5.32,5.0372458
+Karnataka,Bengaluru Urban,2023,4.9333334,4.764405
+Karnataka,Bidar,2023,4.092,4.4615884
+Karnataka,Chamarajanagara,2023,5.3142858,5.3723445
+Karnataka,Chikkaballapura,2023,2.95,3.4514668
+Karnataka,Chikkamagaluru,2023,5.9830985,6.112981
+Karnataka,Chitradurga,2023,5.1928573,5.6988254
+Karnataka,Dakshina Kannada,2023,6.155319,6.093551
+Karnataka,Davangere,2023,3.6767442,4.2137537
+Karnataka,Dharwad,2023,5.695833,5.7002234
+Karnataka,Gadag,2023,6.231818,6.264925
+Karnataka,Hassan,2023,6.4197183,6.258039
+Karnataka,Haveri,2023,5.5,5.720091
+Karnataka,Kalaburagi,2023,3.9263158,4.389457
+Karnataka,Kodagu,2023,7.384722,7.0492134
+Karnataka,Kolar,2023,3.078261,3.6954708
+Karnataka,Koppal,2023,4.532,4.568211
+Karnataka,Mandya,2023,4.8809524,5.282007
+Karnataka,Mysuru,2023,5.3755555,5.1093063
+Karnataka,Raichur,2023,3.7725,3.965016
+Karnataka,Ramanagara,2023,4.9333334,5.1131687
+Karnataka,Shivamogga,2023,5.8807693,5.7516184
+Karnataka,Tumakuru,2023,4.6355553,4.9726353
+Karnataka,Udupi,2023,5.7565217,5.3800545
+Karnataka,Uttara Kannada,2023,4.873684,4.690767
+Karnataka,Vijayapura,2023,5.422807,5.2040415
+Karnataka,Yadgir,2023,4.4846153,4.7088785
+Kerala,Alappuzha,2023,3.1197674,3.612912
+Kerala,Ernakulam,2023,3.2354546,3.4407086
+Kerala,Idukki,2023,3.2545455,3.4228277
+Kerala,Kannur,2023,5.056989,4.7461233
+Kerala,Kasaragod,2023,7.482979,7.0393763
+Kerala,Kollam,2023,6.610577,6.0330677
+Kerala,Kottayam,2023,3.6808512,3.7452826
+Kerala,Kozhikode,2023,4.8727274,4.830049
+Kerala,Malappuram,2023,6.101031,5.6612024
+Kerala,Palakkad,2023,4.367391,4.3035307
+Kerala,Pathanamthitta,2023,5.0348315,5.187618
+Kerala,Thiruvananthapuram,2023,9.493333,7.9582195
+Kerala,Thrissur,2023,4.7734694,4.5770464
+Kerala,Wayanad,2023,5.787879,5.3717337
+Madhya Pradesh,Agar-Malwa,2023,5.3526316,5.5346475
+Madhya Pradesh,Alirajpur,2023,4.035714,3.7244525
+Madhya Pradesh,Anuppur,2023,3.534483,3.3744764
+Madhya Pradesh,Ashoknagar,2023,4.445833,4.6122684
+Madhya Pradesh,Balaghat,2023,2.5139537,2.532438
+Madhya Pradesh,Barwani,2023,4.9454546,4.5172095
+Madhya Pradesh,Betul,2023,2.3921053,2.444512
+Madhya Pradesh,Bhind,2023,7.3473682,6.048125
+Madhya Pradesh,Bhopal,2023,3.2,3.568308
+Madhya Pradesh,Burhanpur,2023,9.892857,10.175414
+Madhya Pradesh,Chhatarpur,2023,4.8157897,4.5942903
+Madhya Pradesh,Chhindwara,2023,2.0965514,2.3910878
+Madhya Pradesh,Damoh,2023,1.5240002,1.8585572
+Madhya Pradesh,Datia,2023,8.454545,7.9074087
+Madhya Pradesh,Dewas,2023,4.5,4.371218
+Madhya Pradesh,Dhar,2023,4.7674417,4.065263
+Madhya Pradesh,Dindori,2023,1.8210526,1.9743347
+Madhya Pradesh,Guna,2023,5.941379,5.936695
+Madhya Pradesh,Gwalior,2023,6.99,5.55864
+Madhya Pradesh,Harda,2023,4.4428573,4.1793585
+Madhya Pradesh,Indore,2023,4.1272726,4.0443845
+Madhya Pradesh,Jabalpur,2023,3.0903227,2.868905
+Madhya Pradesh,Jhabua,2023,1.9307694,2.1502166
+Madhya Pradesh,Katni,2023,5.23,4.977149
+Madhya Pradesh,Mandla,2023,1.5916667,1.8667774
+Madhya Pradesh,Mandsaur,2023,6.1787877,6.161783
+Madhya Pradesh,Morena,2023,14.109091,14.876731
+Madhya Pradesh,Narmadapuram,2023,5.535,5.1330643
+Madhya Pradesh,Narsimhapur,2023,3.34,3.2717981
+Madhya Pradesh,Neemuch,2023,6.729032,6.458722
+Madhya Pradesh,Panna,2023,4.6,4.3658724
+Madhya Pradesh,Raisen,2023,2.5342858,2.5645185
+Madhya Pradesh,Rajgarh,2023,4.27931,4.4596095
+Madhya Pradesh,Ratlam,2023,5.135135,4.8465343
+Madhya Pradesh,Rewa,2023,6.192,5.8384933
+Madhya Pradesh,Sagar,2023,2.96,2.8721473
+Madhya Pradesh,Satna,2023,6.134483,5.9415355
+Madhya Pradesh,Sehore,2023,4.75,4.5689983
+Madhya Pradesh,Seoni,2023,2.2975612,2.4581666
+Madhya Pradesh,Shahdol,2023,4.5179486,4.199018
+Madhya Pradesh,Shajapur,2023,3.4086957,3.7007504
+Madhya Pradesh,Sheopur,2023,5.035,4.7292633
+Madhya Pradesh,Shivpuri,2023,4.48125,4.49337
+Madhya Pradesh,Sidhi,2023,8.311429,8.005568
+Madhya Pradesh,Singrauli,2023,7.5434785,6.9961305
+Madhya Pradesh,Tikamgarh,2023,4.1,3.7062583
+Madhya Pradesh,Ujjain,2023,3.295122,3.2428114
+Madhya Pradesh,Umaria,2023,4.4166665,4.212342
+Madhya Pradesh,Vidisha,2023,2.4617648,2.591358
+Maharashtra,Ahmednagar,2023,7.0725,6.624984
+Maharashtra,Akola,2023,5.9,4.8503704
+Maharashtra,Amravati,2023,5.4793816,5.130287
+Maharashtra,Beed,2023,7.069231,7.083101
+Maharashtra,Bhandara,2023,2.9441178,3.1770961
+Maharashtra,Buldhana,2023,6.2303796,5.8665433
+Maharashtra,Chandrapur,2023,2.0485296,2.1142259
+Maharashtra,Dharashiv,2023,5.5475,5.855016
+Maharashtra,Dhule,2023,6.8055553,6.5704923
+Maharashtra,Gadchiroli,2023,1.4697676,1.7355819
+Maharashtra,Gondia,2023,3.047826,3.2274692
+Maharashtra,Hingoli,2023,2.8222222,2.8935645
+Maharashtra,Jalgaon,2023,9.587097,8.491093
+Maharashtra,Jalna,2023,6.843396,7.143854
+Maharashtra,Kolhapur,2023,3.1923077,3.117338
+Maharashtra,Latur,2023,4.892857,5.157538
+Maharashtra,Mumbai,2023,3.2333333,2.9312615
+Maharashtra,Nagpur,2023,2.926923,2.8349314
+Maharashtra,Nanded,2023,2.5941176,2.609378
+Maharashtra,Nandurbar,2023,7.858333,7.932696
+Maharashtra,Nashik,2023,4.7766232,4.965211
+Maharashtra,Parbhani,2023,6.2608695,6.028088
+Maharashtra,Pune,2023,5.246774,5.0649266
+Maharashtra,Raigad,2023,0.7551021,1.678803
+Maharashtra,Ratnagiri,2023,3.930303,3.6196494
+Maharashtra,Sangli,2023,4.8424997,4.7530885
+Maharashtra,Satara,2023,4.6821427,4.1181364
+Maharashtra,Sindhudurg,2023,4.1072726,3.7064056
+Maharashtra,Solapur,2023,6.096552,5.9890585
+Maharashtra,Thane,2023,1.4920001,2.0369782
+Maharashtra,Wardha,2023,2.2432837,2.3461382
+Maharashtra,Washim,2023,2.6490564,2.7281554
+Maharashtra,Yavatmal,2023,2.4373627,2.5503962
+Meghalaya,East Garo Hills,2023,2.0749998,2.1088457
+Meghalaya,East Khasi Hills,2023,1.6374998,1.8603635
+Meghalaya,North Garo Hills,2023,1.8857145,2.0298505
+Meghalaya,Ri Bhoi,2023,1.9666667,2.0697236
+Meghalaya,South West Garo Hills,2023,2.1999998,2.298307
+Meghalaya,West Garo Hills,2023,2.2083335,2.3403008
+Meghalaya,West Jaintia Hills,2023,0.65000004,1.5419817
+Meghalaya,West Khasi Hills,2023,1.7000003,1.9901557
+Mizoram,Kolasib,2023,0.19999976,1.3623576
+Mizoram,Mamit,2023,4.2999997,3.8862875
+Nagaland,Dimapur,2023,6.6363635,5.8977017
+Odisha,Anugul,2023,1.8959184,1.9624109
+Odisha,Balangir,2023,2.497015,2.2990808
+Odisha,Baleshwar,2023,1.6268291,1.862504
+Odisha,Bargarh,2023,1.2907696,1.7086167
+Odisha,Bhadrak,2023,0.99999994,1.5844316
+Odisha,Boudh,2023,1.4812498,1.7962518
+Odisha,Cuttack,2023,1.9707689,2.0165954
+Odisha,Deogarh,2023,1.546154,1.8798418
+Odisha,Dhenkanal,2023,2.3974357,2.3566465
+Odisha,Gajapati,2023,3.9,3.9811816
+Odisha,Ganjam,2023,2.3300002,2.347177
+Odisha,Jagatsinghapur,2023,1.2750001,1.6605587
+Odisha,Jajapur,2023,1.8846154,1.9216175
+Odisha,Jharsuguda,2023,1.3266668,1.6893101
+Odisha,Kalahandi,2023,2.067647,1.99332
+Odisha,Kandhamal,2023,3.0464284,2.7996728
+Odisha,Kendrapara,2023,1.3120003,1.6588459
+Odisha,Kendujhar,2023,1.7245612,1.8800297
+Odisha,Khordha,2023,2.7171876,2.680134
+Odisha,Koraput,2023,3.2210526,2.934682
+Odisha,Malkangiri,2023,1.2350001,1.7614803
+Odisha,Mayurbhanj,2023,2.4720001,2.3340986
+Odisha,Nabarangpur,2023,2.0,1.9724355
+Odisha,Nayagarh,2023,2.027907,2.2045307
+Odisha,Nuapada,2023,2.1285715,2.0444102
+Odisha,Puri,2023,2.51519,2.4244995
+Odisha,Rayagada,2023,2.756522,2.5150611
+Odisha,Sambalpur,2023,1.1291142,1.6919899
+Odisha,Sonepur,2023,1.2539997,1.7454982
+Odisha,Sundargarh,2023,2.4946666,2.4803917
+Puducherry,Karaikal,2023,3.075,3.221313
+Puducherry,Pondicherry,2023,3.875,4.0042067
+Punjab,Amritsar,2023,16.216667,16.779865
+Punjab,Barnala,2023,42.450005,36.703167
+Punjab,Bathinda,2023,18.322222,19.539408
+Punjab,Faridkot,2023,10.347059,9.674328
+Punjab,Fatehgarh Sahib,2023,23.279999,23.52379
+Punjab,Fazilka,2023,3.6625001,3.6331625
+Punjab,Ferozepur,2023,10.183333,10.67594
+Punjab,Gurdaspur,2023,9.2,8.396918
+Punjab,Hoshiarpur,2023,5.0099998,4.2750196
+Punjab,Jalandhar,2023,23.63,25.479053
+Punjab,Kapurthala,2023,24.05,24.414492
+Punjab,Ludhiana,2023,16.65,18.39328
+Punjab,Mansa,2023,14.736362,15.706407
+Punjab,Moga,2023,27.4,27.460892
+Punjab,Pathankot,2023,4.8846154,4.8781886
+Punjab,Patiala,2023,24.08,22.01334
+Punjab,Rupnagar,2023,6.2,4.9325185
+Punjab,S.A.S Nagar,2023,2.8166666,3.105502
+Punjab,Sangrur,2023,40.1,39.495266
+Punjab,Shahid Bhagat Singh Nagar,2023,20.778572,20.844429
+Punjab,Sri Muktsar Sahib,2023,4.422222,3.9654047
+Punjab,Tarn Taran,2023,21.883333,21.028048
+Rajasthan,Ajmer,2023,8.6214285,8.445692
+Rajasthan,Alwar,2023,31.486666,31.324926
+Rajasthan,Banswara,2023,3.5757577,3.531491
+Rajasthan,Baran,2023,3.8153846,4.364688
+Rajasthan,Barmer,2023,38.56111,35.41821
+Rajasthan,Bharatpur,2023,20.095238,20.619196
+Rajasthan,Bhilwara,2023,8.702041,6.8104753
+Rajasthan,Bikaner,2023,29.979412,29.437069
+Rajasthan,Bundi,2023,4.29,4.659319
+Rajasthan,Chittorgarh,2023,6.3,4.950991
+Rajasthan,Churu,2023,31.095999,30.98943
+Rajasthan,Dausa,2023,30.852173,29.876705
+Rajasthan,Dholpur,2023,13.105263,12.589778
+Rajasthan,Dungarpur,2023,5.34,4.8607583
+Rajasthan,Ganganagar,2023,16.14,17.375563
+Rajasthan,Hanumangarh,2023,21.92,21.98546
+Rajasthan,Jaipur,2023,51.37,53.783585
+Rajasthan,Jaisalmer,2023,34.318462,35.429142
+Rajasthan,Jalore,2023,38.2,34.775074
+Rajasthan,Jhalawar,2023,6.329167,6.0599613
+Rajasthan,Jhunjhunu,2023,60.03913,60.28527
+Rajasthan,Jodhpur,2023,16.8,17.091047
+Rajasthan,Karauli,2023,21.32174,23.531324
+Rajasthan,Kota,2023,7.733333,7.562368
+Rajasthan,Nagaur,2023,57.166668,58.476646
+Rajasthan,Pali,2023,6.40625,5.3496523
+Rajasthan,Pratapgarh,2023,4.75,4.2515554
+Rajasthan,Rajsamand,2023,4.372727,3.4209397
+Rajasthan,Sawai Madhopur,2023,6.1,5.8237453
+Rajasthan,Sikar,2023,54.36111,60.671272
+Rajasthan,Sirohi,2023,6.757143,5.1639233
+Rajasthan,Tonk,2023,4.347619,3.9762688
+Rajasthan,Udaipur,2023,5.128,4.5413446
+Tamil Nadu,Ariyalur,2023,3.71,3.8414385
+Tamil Nadu,Chennai,2023,3.65,3.731878
+Tamil Nadu,Coimbatore,2023,11.646428,9.185056
+Tamil Nadu,Cuddalore,2023,4.693333,4.6597176
+Tamil Nadu,Dharmapuri,2023,8.988889,8.116131
+Tamil Nadu,Dindigul,2023,5.8964286,5.6251636
+Tamil Nadu,Erode,2023,7.391111,6.336727
+Tamil Nadu,Kancheepuram,2023,4.9333334,4.7739825
+Tamil Nadu,Kanniyakumari,2023,8.235714,7.6532874
+Tamil Nadu,Karur,2023,5.0571427,4.9407763
+Tamil Nadu,Krishnagiri,2023,5.2941175,5.0145154
+Tamil Nadu,Madurai,2023,5.295,5.189405
+Tamil Nadu,Nagapattinam,2023,3.1000001,3.3116682
+Tamil Nadu,Namakkal,2023,7.002174,6.0641527
+Tamil Nadu,Perambalur,2023,4.725,4.9232106
+Tamil Nadu,Pudukkottai,2023,4.258333,4.40417
+Tamil Nadu,Ramanathapuram,2023,4.254545,4.459025
+Tamil Nadu,Ranipet,2023,3.3285716,3.5756607
+Tamil Nadu,Salem,2023,5.767391,5.3850136
+Tamil Nadu,Sivaganga,2023,5.753846,5.521439
+Tamil Nadu,Thanjavur,2023,3.53125,3.7873242
+Tamil Nadu,The Nilgiris,2023,5.4111114,5.1399865
+Tamil Nadu,Theni,2023,7.3428574,6.4808855
+Tamil Nadu,Thiruvallur,2023,3.2428572,3.6927428
+Tamil Nadu,Thiruvarur,2023,2.9333334,3.2759268
+Tamil Nadu,Tiruchirappalli,2023,5.3333335,5.040853
+Tamil Nadu,Tirunelveli,2023,6.31,5.919774
+Tamil Nadu,Tiruppur,2023,6.654348,5.7869725
+Tamil Nadu,Tiruvannamalai,2023,6.177273,5.5499105
+Tamil Nadu,Vellore,2023,6.6363635,5.8535705
+Tamil Nadu,Viluppuram,2023,3.8636365,4.249423
+Tamil Nadu,Virudhunagar,2023,5.305,5.2917295
+Telangana,Adilabad,2023,2.2578945,2.3599532
+Telangana,Bhadradri Kothagudem,2023,3.65625,3.5501225
+Telangana,Hanumakonda,2023,1.6833334,2.1232333
+Telangana,Hyderabad,2023,5.5285716,5.109758
+Telangana,Jagitial,2023,2.675,2.5161228
+Telangana,Jangaon,2023,2.3000002,2.7421951
+Telangana,Jayashankar Bhupalapally,2023,1.1999998,1.7821822
+Telangana,Jogulamba Gadwal,2023,1.9000001,2.1347632
+Telangana,Kamareddy,2023,3.376923,3.3078475
+Telangana,Karimnagar,2023,2.5333335,2.9024134
+Telangana,Khammam,2023,2.78,3.0610464
+Telangana,Mahabubabad,2023,1.625,1.9012022
+Telangana,Mahabubnagar,2023,3.9333334,3.8411076
+Telangana,Mancherial,2023,2.2769232,2.3013911
+Telangana,Medak,2023,3.4333334,3.7783842
+Telangana,Medchal Malkajgiri,2023,4.825,4.4461594
+Telangana,Mulugu,2023,1.6333332,1.9974222
+Telangana,Nagarkurnool,2023,6.65,5.6760607
+Telangana,Nalgonda,2023,4.7045455,4.6936116
+Telangana,Narayanpet,2023,3.2,3.7797
+Telangana,Nirmal,2023,2.06,2.1898112
+Telangana,Nizamabad,2023,2.1,2.1673865
+Telangana,Peddapalli,2023,2.5333335,2.438915
+Telangana,Rajanna Sircilla,2023,2.3000002,2.4208503
+Telangana,Ranga Reddy,2023,6.5055556,5.7994437
+Telangana,Sangareddy,2023,3.5714288,3.9690764
+Telangana,Siddipet,2023,3.3999999,3.9168835
+Telangana,Suryapet,2023,2.9214287,3.1117134
+Telangana,Vikarabad,2023,4.3178573,4.2521477
+Telangana,Wanaparthy,2023,5.15,5.105199
+Telangana,Warangal,2023,2.8000002,3.092141
+Telangana,Yadadri Bhuvanagiri,2023,4.923529,4.849306
+Tripura,Dhalai,2023,3.123077,2.9176786
+Tripura,Gomati,2023,3.146154,2.9212778
+Tripura,Khowai,2023,3.0428572,2.7914817
+Tripura,North Tripura,2023,2.3842106,2.3315732
+Tripura,Sepahijala,2023,1.8666668,2.1253743
+Tripura,South Tripura,2023,2.3812504,2.4091425
+Tripura,Unakoti,2023,2.8444445,2.679591
+Tripura,West Tripura,2023,2.99,2.8715935
+Uttar Pradesh,Agra,2023,17.557142,16.647852
+Uttar Pradesh,Aligarh,2023,5.688889,5.706211
+Uttar Pradesh,Ambedkar Nagar,2023,3.3615386,3.4554513
+Uttar Pradesh,Amethi,2023,3.9869566,3.9486496
+Uttar Pradesh,Amroha,2023,12.4,10.78041
+Uttar Pradesh,Auraiya,2023,6.422222,5.897556
+Uttar Pradesh,Ayodhya,2023,3.2133334,3.412011
+Uttar Pradesh,Azamgarh,2023,3.7333333,3.7743511
+Uttar Pradesh,Baghpat,2023,18.314285,16.554155
+Uttar Pradesh,Bahraich,2023,3.1473684,3.2401567
+Uttar Pradesh,Ballia,2023,2.664706,2.7177224
+Uttar Pradesh,Balrampur,2023,2.5736842,2.7379282
+Uttar Pradesh,Banda,2023,3.7285714,3.9793944
+Uttar Pradesh,Bara Banki,2023,5.0243244,4.980074
+Uttar Pradesh,Bareilly,2023,4.608333,4.5088873
+Uttar Pradesh,Basti,2023,2.3928573,2.59071
+Uttar Pradesh,Bhadohi,2023,8.114285,7.847654
+Uttar Pradesh,Bijnor,2023,6.322222,5.5731006
+Uttar Pradesh,Budaun,2023,18.25,18.04036
+Uttar Pradesh,Bulandshahr,2023,10.733333,11.629838
+Uttar Pradesh,Chandauli,2023,5.258333,5.3466234
+Uttar Pradesh,Chitrakoot,2023,11.842857,13.043668
+Uttar Pradesh,Deoria,2023,3.32,2.931343
+Uttar Pradesh,Etah,2023,9.58,8.478062
+Uttar Pradesh,Etawah,2023,8.272727,7.1406107
+Uttar Pradesh,Farrukhabad,2023,14.166667,16.335293
+Uttar Pradesh,Fatehpur,2023,7.846667,6.3088207
+Uttar Pradesh,Firozabad,2023,19.36,20.714424
+Uttar Pradesh,Gautam Buddha Nagar,2023,15.874999,14.1048155
+Uttar Pradesh,Ghaziabad,2023,13.099999,12.446665
+Uttar Pradesh,Ghazipur,2023,5.33125,5.2859097
+Uttar Pradesh,Gonda,2023,3.05,3.1351407
+Uttar Pradesh,Gorakhpur,2023,3.8083334,3.4697688
+Uttar Pradesh,Hamirpur,2023,7.0176473,6.9176145
+Uttar Pradesh,Hapur,2023,16.699999,17.686619
+Uttar Pradesh,Hardoi,2023,4.0875,4.2217736
+Uttar Pradesh,Hathras,2023,1.25,2.4234462
+Uttar Pradesh,Jalaun,2023,6.867647,5.987526
+Uttar Pradesh,Jaunpur,2023,4.936,4.7515717
+Uttar Pradesh,Jhansi,2023,3.345,3.4325209
+Uttar Pradesh,Kannauj,2023,12.1375,10.643921
+Uttar Pradesh,Kanpur Dehat,2023,7.1222224,6.466477
+Uttar Pradesh,Kanpur Nagar,2023,4.917647,4.324096
+Uttar Pradesh,Kasganj,2023,4.4375,4.630233
+Uttar Pradesh,Kaushambi,2023,11.557142,11.956559
+Uttar Pradesh,Kushinagar,2023,3.15,2.9314618
+Uttar Pradesh,Lalitpur,2023,2.6142857,2.6308882
+Uttar Pradesh,Lucknow,2023,10.636842,9.811863
+Uttar Pradesh,Mahoba,2023,4.918182,4.545478
+Uttar Pradesh,Mahrajganj,2023,1.8142858,2.0726032
+Uttar Pradesh,Mainpuri,2023,3.9166667,3.8092148
+Uttar Pradesh,Mathura,2023,3.3235295,3.6068957
+Uttar Pradesh,Mau,2023,4.642857,4.225197
+Uttar Pradesh,Meerut,2023,12.671429,12.297426
+Uttar Pradesh,Mirzapur,2023,7.0764704,6.7389007
+Uttar Pradesh,Moradabad,2023,6.0666666,5.403585
+Uttar Pradesh,Muzaffarnagar,2023,9.1,8.345098
+Uttar Pradesh,Pilibhit,2023,2.6636362,2.8779426
+Uttar Pradesh,Pratapgarh,2023,7.1793103,6.365469
+Uttar Pradesh,Prayagraj,2023,6.95,6.422935
+Uttar Pradesh,Rae Bareli,2023,4.9852943,4.646776
+Uttar Pradesh,Rampur,2023,5.58,5.0016956
+Uttar Pradesh,Saharanpur,2023,6.375,5.5543213
+Uttar Pradesh,Sambhal,2023,17.449999,17.430729
+Uttar Pradesh,Sant Kabir Nagar,2023,2.6625001,2.629912
+Uttar Pradesh,Shahjahanpur,2023,5.8,5.1606975
+Uttar Pradesh,Shamli,2023,24.099998,28.132874
+Uttar Pradesh,Shrawasti,2023,0.7692308,1.7925329
+Uttar Pradesh,Siddharthnagar,2023,1.7230773,2.1399708
+Uttar Pradesh,Sitapur,2023,4.716129,4.3947015
+Uttar Pradesh,Sonbhadra,2023,7.611111,6.7204504
+Uttar Pradesh,Sultanpur,2023,5.118919,4.68595
+Uttar Pradesh,Unnao,2023,4.614286,4.2661695
+Uttar Pradesh,Varanasi,2023,8.745455,7.7262073
+Uttarakhand,Champawat,2023,12.566667,12.301172
+Uttarakhand,Dehradun,2023,15.53,15.039061
+Uttarakhand,Haridwar,2023,8.05122,7.832651
+Uttarakhand,Nainital,2023,30.058332,30.021147
+Uttarakhand,Pauri Garhwal,2023,71.65,66.30079
+Uttarakhand,Tehri Garhwal,2023,33.78,34.67631
+West Bengal,Alipurduar,2023,2.7666667,2.6799843
+West Bengal,Bankura,2023,2.6262136,2.5647583
+West Bengal,Birbhum,2023,3.1947916,3.0124645
+West Bengal,Cooch Behar,2023,1.4147058,1.7743831
+West Bengal,Dakshin Dinajpur,2023,3.8363636,3.846486
+West Bengal,Darjeeling,2023,1.764286,2.0052085
+West Bengal,Hooghly,2023,2.032143,1.9642324
+West Bengal,Howrah,2023,1.9173913,1.9071922
+West Bengal,Jalpaiguri,2023,1.5725493,1.8534789
+West Bengal,Jhargram,2023,2.8666666,2.665722
+West Bengal,Kolkata,2023,1.1999998,1.6874895
+West Bengal,Malda,2023,2.9545455,2.7608864
+West Bengal,Murshidabad,2023,3.9473684,3.3888152
+West Bengal,Nadia,2023,5.0125,4.6747155
+West Bengal,North 24 Parganas,2023,1.2777777,1.7319856
+West Bengal,Paschim Bardhaman,2023,2.2199998,2.2818952
+West Bengal,Paschim Medinipur,2023,2.0171428,2.142396
+West Bengal,Purba Bardhaman,2023,3.7842107,3.813371
+West Bengal,Purba Medinipur,2023,5.075,5.1395793
+West Bengal,Purulia,2023,2.0554352,2.2227597
+West Bengal,South 24 Parganas,2023,6.077778,5.3369427
+West Bengal,Uttar Dinajpur,2023,2.4666667,2.4318225

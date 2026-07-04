@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groundwater Intelligence Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <style>
+        /* ── OFFLINE TAILWIND REPLACEMENT ── */
+        /* Fonts: system stack only, no CDN */
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        h1,h2,h3,h4,.font-heading { font-family: 'Segoe UI', Georgia, sans-serif; }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        .antialiased { -webkit-font-smoothing: antialiased; }
+        .min-h-screen { min-height: 100vh; }
+        .relative { position: relative; }
+        .fixed { position: fixed; }
+        .absolute { position: absolute; }
+        .inset-0 { top:0;right:0;bottom:0;left:0; }
+        .hidden { display: none !important; }
+        .flex { display: flex; }
+        .inline-flex { display: inline-flex; }
+        .inline-block { display: inline-block; }
+        .block { display: block; }
+        .grid { display: grid; }
+        .overflow-hidden { overflow: hidden; }
+        .overflow-x-auto { overflow-x: auto; }
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .w-10{width:2.5rem}.h-10{height:2.5rem}
+        .w-6{width:1.5rem}.h-6{height:1.5rem}
+        .w-5{width:1.25rem}.h-5{height:1.25rem}
+        .w-4{width:1rem}.h-4{height:1rem}
+        .w-3{width:.75rem}.h-3{height:.75rem}
+        .w-20{width:5rem}.h-20{height:5rem}
+        .w-24{width:6rem}.h-24{height:6rem}
+        .h-px{height:1px}
+        .h-\[500px\]{height:500px}
+        .flex-1{flex:1 1 0%}
+        .flex-wrap{flex-wrap:wrap}
+        .items-center{align-items:center}
+        .items-start{align-items:flex-start}
+        .justify-between{justify-content:space-between}
+        .justify-center{justify-content:center}
+        .justify-start{justify-content:flex-start}
+        .self-end{align-self:flex-end}
+        .self-start{align-self:flex-start}
+        .gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}
+        .space-y-4>*+*{margin-top:1rem}
+        .space-y-6>*+*{margin-top:1.5rem}
+        .text-center{text-align:center}
+        .text-left{text-align:left}
+        .uppercase{text-transform:uppercase}
+        .italic{font-style:italic}
+        .font-medium{font-weight:500}
+        .font-bold{font-weight:700}
+        .font-black{font-weight:900}
+        .text-xs{font-size:.75rem;line-height:1rem}
+        .text-sm{font-size:.875rem;line-height:1.25rem}
+        .text-xl{font-size:1.25rem;line-height:1.75rem}
+        .text-2xl{font-size:1.5rem;line-height:2rem}
+        .text-3xl{font-size:1.875rem;line-height:2.25rem}
+        .text-4xl{font-size:2.25rem;line-height:2.5rem}
+        .text-5xl{font-size:3rem;line-height:1}
+        .leading-relaxed{line-height:1.625}
+        .leading-\[1\.1\]{line-height:1.1}
+        .tracking-widest{letter-spacing:.1em}
+        .tracking-\[0\.2em\]{letter-spacing:.2em}
+        .tracking-wide{letter-spacing:.025em}
+        .whitespace-nowrap{white-space:nowrap}
+
+        /* Colors */
+        .text-white{color:#fff}
+        .text-slate-300{color:#cbd5e1}
+        .text-slate-400{color:#94a3b8}
+        .text-slate-500{color:#64748b}
+        .text-primary{color:var(--primary)}
+        .text-textmain{color:var(--text-primary)}
+        .text-textdim{color:var(--text-secondary)}
+        .text-darkbase{color:var(--bg-page)}
+        .text-rose-500{color:#f43f5e}
+        .text-amber-500{color:#f59e0b}
+        .text-green-400{color:#4ade80}
+        .text-rose-400{color:#fb7185}
+        .text-transparent{color:transparent}
+
+        /* Backgrounds */
+        .bg-white\/5{background:rgba(255,255,255,.05)}
+        .bg-white\/\[0\.02\]{background:rgba(255,255,255,.02)}
+        .bg-darkbase\/60{background:rgba(2,6,23,.6)}
+        .bg-primary{background:var(--primary)}
+        .bg-rose-500{background:#f43f5e}
+        .bg-primary\/10{background:rgba(45,212,191,.1)}
+        .bg-green-500\/10{background:rgba(34,197,94,.1)}
+        .bg-rose-500\/10{background:rgba(244,63,94,.1)}
+        .bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}
+        .bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}
+        .from-primary{--tw-gradient-from:var(--primary);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,transparent)}
+        .to-secondary{--tw-gradient-to:var(--secondary)}
+        .from-transparent{--tw-gradient-from:transparent;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,transparent)}
+        .to-white\/10{--tw-gradient-to:rgba(255,255,255,.1)}
+        .bg-clip-text{-webkit-background-clip:text;background-clip:text}
+
+        /* Borders */
+        .border{border-width:1px;border-style:solid}
+        .border-4{border-width:4px;border-style:solid}
+        .border-b{border-bottom-width:1px;border-bottom-style:solid}
+        .border-b-2{border-bottom-width:2px;border-bottom-style:solid}
+        .border-t{border-top-width:1px;border-top-style:solid}
+        .border-white\/5{border-color:rgba(255,255,255,.05)}
+        .border-white\/10{border-color:rgba(255,255,255,.10)}
+        .border-primary{border-color:var(--primary)}
+        .border-primary\/10{border-color:rgba(45,212,191,.10)}
+        .border-primary\/20{border-color:rgba(45,212,191,.20)}
+        .border-primary\/50{border-color:rgba(45,212,191,.50)}
+        .border-t-transparent{border-top-color:transparent}
+        .divide-y>*+*{border-top-width:1px;border-top-style:solid}
+        .divide-white\/5>*+*{border-top-color:rgba(255,255,255,.05)}
+
+        /* Rounded */
+        .rounded-full{border-radius:9999px}
+        .rounded-lg{border-radius:.5rem}
+        .rounded-xl{border-radius:.75rem}
+        .rounded-2xl{border-radius:1rem}
+        .rounded-br-none{border-bottom-right-radius:0}
+        .rounded-bl-none{border-bottom-left-radius:0}
+
+        /* Spacing */
+        .p-1{padding:.25rem}.p-2{padding:.5rem}.p-3\.5{padding:.875rem}
+        .p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}
+        .px-2{padding-left:.5rem;padding-right:.5rem}
+        .px-3{padding-left:.75rem;padding-right:.75rem}
+        .px-4{padding-left:1rem;padding-right:1rem}
+        .px-6{padding-left:1.5rem;padding-right:1.5rem}
+        .py-1{padding-top:.25rem;padding-bottom:.25rem}
+        .py-1\.5{padding-top:.375rem;padding-bottom:.375rem}
+        .py-2{padding-top:.5rem;padding-bottom:.5rem}
+        .py-3{padding-top:.75rem;padding-bottom:.75rem}
+        .py-4{padding-top:1rem;padding-bottom:1rem}
+        .py-10{padding-top:2.5rem;padding-bottom:2.5rem}
+        .pt-32{padding-top:8rem}.pt-8{padding-top:2rem}
+        .pb-6{padding-bottom:1.5rem}.pb-8{padding-bottom:2rem}.pb-20{padding-bottom:5rem}
+        .mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}
+        .mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}
+        .mb-8{margin-bottom:2rem}.mb-10{margin-bottom:2.5rem}
+        .mb-12{margin-bottom:3rem}.mb-20{margin-bottom:5rem}
+        .mt-1{margin-top:.25rem}.mt-6{margin-top:1.5rem}
+        .mr-3{margin-right:.75rem}
+        .mx-auto{margin-left:auto;margin-right:auto}
+
+        /* Sizing */
+        .z-10{z-index:10}.z-50{z-index:50}
+        .top-0{top:0}.right-0{right:0}
+        .max-w-2xl{max-width:42rem}
+        .max-w-4xl{max-width:56rem}
+        .max-w-\[85\%\]{max-width:85%}
+        .shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+
+        /* Opacity */
+        .opacity-10{opacity:.1}.opacity-20{opacity:.2}.opacity-30{opacity:.3}
+        .disabled\:opacity-30:disabled{opacity:.3}
+        .disabled\:pointer-events-none:disabled{pointer-events:none}
+
+        /* Transitions */
+        .transition{transition:all .15s ease}
+        .transition-all{transition:all .15s ease}
+        .duration-300{transition-duration:300ms}
+
+        /* Backdrop */
+        .backdrop-blur-sm{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+
+        /* Animations */
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .animate-spin{animation:spin 1s linear infinite}
+
+        /* Hover states */
+        .hover\:bg-white\/5:hover{background:rgba(255,255,255,.05)}
+        .hover\:bg-white\/10:hover{background:rgba(255,255,255,.1)}
+        .hover\:text-primary:hover{color:var(--primary)}
+        .hover\:text-white:hover{color:#fff}
+        .hover\:border-primary:hover{border-color:var(--primary)}
+        .hover\:border-primary\/20:hover{border-color:rgba(45,212,191,.2)}
+        .hover\:border-secondary\/20:hover{border-color:rgba(56,189,248,.2)}
+        .hover\:border-rose-500\/20:hover{border-color:rgba(244,63,94,.2)}
+        .hover\:border-primary\/50:hover{border-color:rgba(45,212,191,.5)}
+        .group:hover .group-hover\:opacity-20{opacity:.2}
+
+        /* Grid layouts */
+        .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+        .grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+
+        /* Container */
+        .container{width:100%;max-width:1280px}
+
+        /* Focus */
+        .focus\:outline-none:focus{outline:none}
+        .focus\:ring-1:focus{box-shadow:0 0 0 1px var(--primary)}
+
+        /* Table */
+        table{border-collapse:collapse;width:100%}
+        .text-\[10px\]{font-size:.625rem}
+        .text-\[9px\]{font-size:.5625rem}
+
+        /* Select - force dark background so text is visible */
+        select {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: rgba(15, 23, 42, 0.85) !important;
+            color: #f8fafc !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right .75rem center;
+            background-size: 1.2em;
+            border: 1px solid rgba(255,255,255,0.15) !important;
+        }
+        select option {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        select:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+        main > * { pointer-events: all; }
+        main section, main div { pointer-events: all; }
+        /* Chatbot styles moved inline to JS-built elements */
+
+        /* RESPONSIVE */
+        @media(min-width:768px){
+            .md\:flex{display:flex}
+            .md\:text-left{text-align:left}
+            .md\:text-7xl{font-size:4.5rem;line-height:1}
+            .md\:flex-row{flex-direction:row}
+            .md\:items-center{align-items:center}
+            .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+            .md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+        }
+        @media(min-width:1024px){
+            .lg\:col-span-8{grid-column:span 8/span 8}
+            .lg\:col-span-4{grid-column:span 4/span 4}
+            .lg\:col-span-2{grid-column:span 2/span 2}
+            .lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+            .lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}
+            .lg\:h-96{height:24rem}
+        }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen relative">
+    <div class="hero-bg"></div>
+
+    <nav class="fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-darkbase" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.64.288a11 11 0 01-5.023.274l-.467-.046a6 6 0 01-3.057-1.215L2.028 13.5l-.54-.54a2 2 0 010-2.828l1.246-1.246a6 6 0 013.057-1.215l.467-.046a11 11 0 015.023.274l.64.288a6 6 0 003.86.517l2.387-.477a2 2 0 001.022-.547l.533-.533a2 2 0 012.828 0l1.246 1.246a2 2 0 010 2.828l-1.246 1.246a6 6 0 00-1.215 3.057l-.046.467a11 11 0 00.274 5.023l.288.64a6 6 0 01.517 3.86l-.477 2.387a2 2 0 01-.547 1.022l-.533.533a2 2 0 000 2.828l1.246 1.246a2 2 0 002.828 0l.533-.533z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-slate-300 hover:text-primary transition">Home</a>
+                <a href="#dashboard" class="text-sm font-medium text-slate-300 hover:text-primary transition">Dashboard</a>
+                <a href="#insights" class="text-sm font-medium text-slate-300 hover:text-primary transition">Insights</a>
+                <a href="#logs" class="text-sm font-medium text-slate-300 hover:text-primary transition">System Logs</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="themeToggle" class="p-2 rounded-full glass hover:bg-white/10 transition text-slate-300">
+                    <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+                <button class="btn-primary" onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'})">Get Started <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 pt-32 pb-20 relative z-10" style="pointer-events:none">
+        <section class="mb-20 animate-fade-in text-center md:text-left max-w-4xl">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6 border border-primary/20">India's High-Integrity Water Intelligence</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-textmain mb-6 leading-[1.1]">Turning Ground Water Data into
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Actionable Assets.</span>
+            </h1>
+            <p class="text-xl text-textdim mb-10 max-w-2xl">This is a intelligence engine for water security and agricultural impact, built for transparency, traceability, and real impact.</p>
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <button class="btn-primary" onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'})">Explore Dashboard</button>
+                <button class="btn-outline">Watch Demo</button>
+            </div>
+        </section>
+
+        <div id="dashboard" class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+            <div class="lg:col-span-8 glass p-6 animate-fade-in" style="animation-delay:.2s">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold flex items-center gap-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        Interactive Map View
+                    </h2>
+                    <div class="flex gap-2 glass p-1 rounded-xl">
+                        <button id="mapWlBtn" class="text-xs px-3 py-1.5 rounded-lg bg-primary text-darkbase font-bold transition">Water Level</button>
+                        <button id="mapNo3Btn" class="text-xs px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition">Nitrate</button>
+                    </div>
+                </div>
+                <div id="india-map" class="w-full h-[500px] rounded-xl overflow-hidden relative border border-white/5">
+                    <div id="mapLoading" class="absolute inset-0 flex items-center justify-center bg-darkbase/60 backdrop-blur-sm z-10 hidden">
+                        <div class="animate-spin rounded-full" style="width:40px;height:40px;border:2px solid transparent;border-bottom-color:var(--primary);border-radius:50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4">
+                <div class="glass p-8 animate-fade-in flex flex-col gap-8" style="animation-delay:.3s">
+                    <div>
+                        <h3 class="text-sm font-bold mb-6 text-textmain uppercase tracking-[0.2em]">Region Selection</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">State</label>
+                                <select id="state" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-1 transition-all">
+                                    <option value="">-- Choose State --</option>
+                                    {% for state in states %}
+                                    <option value="{{ state }}">{{ state }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">District</label>
+                                <select id="district" disabled class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-1 transition-all disabled:opacity-30">
+                                    <option value="">-- Choose District --</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 border-t border-white/5">
+                        <h3 class="text-sm font-bold mb-6 text-textmain uppercase tracking-[0.2em]">Forecast Horizon</h3>
+                        <div class="grid grid-cols-5 gap-2 mb-8">
+                            {% for i in range(1, 6) %}
+                            <button class="year-btn text-xs glass py-3 rounded-lg border-white/5 hover:border-primary/50 transition-all {% if i==1 %}active border-primary/50{% endif %}" data-years="{{ i }}">
+                                <span class="block font-bold">{{ i }}y</span>
+                            </button>
+                            {% endfor %}
+                        </div>
+                        <button id="forecastBtn" disabled class="w-full btn-primary justify-center disabled:opacity-30 disabled:pointer-events-none">
+                            Run Intelligence Forecast
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="hidden py-20 text-center animate-fade-in">
+            <div class="inline-block relative w-20 h-20">
+                <div class="absolute inset-0 rounded-full" style="border:4px solid rgba(45,212,191,.2)"></div>
+                <div class="absolute inset-0 rounded-full animate-spin" style="border:4px solid var(--primary);border-top-color:transparent"></div>
+            </div>
+            <p class="mt-6 text-slate-400 font-medium tracking-widest uppercase text-sm">Analyzing Ground Water Neural Networks...</p>
+        </div>
+
+        <section id="insights" class="animate-fade-in mb-12" style="animation-delay:.5s">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/10"></div>
+                <h2 class="text-2xl font-bold text-textmain uppercase tracking-[0.2em]">Actionable Insights</h2>
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/10"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+                    </div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-textmain mb-1">Water Quality Risk Score</h3>
+                            <p class="text-textdim text-sm">Single at-a-glance health metric</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-8" id="riskScoreContent">
+                        <div class="flex-1 text-center py-10 opacity-30 italic text-sm text-slate-500">Awaiting location selection...</div>
+                    </div>
+                </div>
+                <div class="glass p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M17 8h-1V7c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H7c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2zM9 7c0-.55.45-1 1-1h4c.55 0 1 .45 1 1v1H9V7z"/></svg>
+                    </div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-textmain mb-1">Crop Suitability Recommender</h3>
+                            <p class="text-textdim text-sm">AI-driven agricultural guidance</p>
+                        </div>
+                    </div>
+                    <div id="cropList" class="flex flex-wrap gap-3 mb-4">
+                        <div class="text-slate-500 italic text-sm">Select a district to view recommendations...</div>
+                    </div>
+                    <p id="cropAdvice" class="text-sm text-slate-400 leading-relaxed">Automated suggestions based on predicted pH and nutrient levels in the groundwater.</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="results" class="hidden animate-fade-in" style="animation-delay:.6s">
+            <div class="glass p-8 mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/5 pb-8 mb-8 gap-4">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white">Neural Forecast Results</h2>
+                        <p id="location-info" class="text-primary mt-1 font-medium tracking-wide uppercase text-sm"></p>
+                    </div>
+                    <div class="glass px-4 py-2 rounded-xl text-xs text-slate-400 border-white/5">Sliding Window: 4 Years</div>
+                </div>
+                <div id="latest-metrics" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="glass p-6 border-white/5">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-[0.2em] mb-6 text-center">Ground Water Depth (mbgl)</h3>
+                        <div id="wl-chart" class="chart-container"></div>
+                    </div>
+                    <div class="glass p-6 border-white/5">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-[0.2em] mb-6 text-center">Acidity Index (pH)</h3>
+                        <div id="ph-chart" class="chart-container"></div>
+                    </div>
+                    <div class="glass p-6 border-white/5 lg:col-span-2">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-[0.2em] mb-6 text-center">Nitrate Concentration (mg/L)</h3>
+                        <div id="no3-chart" class="chart-container lg:h-96"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="logs" class="glass p-8 animate-fade-in" style="animation-delay:.7s">
+            <div class="flex justify-between items-center mb-8 border-b border-white/5 pb-6">
+                <h2 class="text-xl font-bold flex items-center text-textmain uppercase tracking-widest">
+                    <svg class="w-5 h-5 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Intelligence Transmission Logs
+                </h2>
+                <button onclick="fetchEmailLogs()" class="text-[10px] font-bold uppercase tracking-widest glass px-4 py-2 rounded-lg hover:bg-white/5 transition flex items-center gap-2">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    Sync
+                </button>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-white/5 bg-white/[0.02]">
+                <table class="w-full text-left text-sm text-slate-400">
+                    <thead class="bg-white/5 text-slate-300">
+                        <tr>
+                            <th class="px-6 py-4 font-bold uppercase text-[10px] tracking-widest">Timestamp</th>
+                            <th class="px-6 py-4 font-bold uppercase text-[10px] tracking-widest">Recipient</th>
+                            <th class="px-6 py-4 font-bold uppercase text-[10px] tracking-widest">Location</th>
+                            <th class="px-6 py-4 font-bold uppercase text-[10px] tracking-widest text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="emailLogsTableBody" class="divide-y divide-white/5">
+                        <tr>
+                            <td colspan="4" class="px-6 py-10 text-center text-slate-500 italic">No intelligence transmitted yet... Run a forecast to initiate protocols.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let selectedYears = 1, currentState = '', currentDistrict = '', currentCharts = [];
+
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const html = document.documentElement;
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                sunIcon.classList.toggle('hidden');
+                moonIcon.classList.toggle('hidden');
+                if (currentCharts.length > 0) currentCharts.forEach(c => Plotly.Plots.resize(c));
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        function getChartThemeSettings() {
+            const isDark = html.classList.contains('dark');
+            return {
+                textColor: isDark ? '#94a3b8' : '#475569',
+                gridColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
+                plotBg: 'rgba(0,0,0,0)', paperBg: 'rgba(0,0,0,0)',
+                historicalLine: isDark ? '#475569' : '#94a3b8'
+            };
+        }
+
+        function clearPreviousCharts() {
+            currentCharts.forEach(c => Plotly.purge(c));
+            currentCharts = [];
+        }
+
+        document.querySelectorAll('.year-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.year-btn').forEach(b => { b.classList.remove('active'); b.style.borderColor = 'rgba(255,255,255,0.05)'; });
+                this.classList.add('active');
+                this.style.borderColor = 'rgba(45,212,191,0.5)';
+                selectedYears = parseInt(this.dataset.years);
+            });
+        });
+
+        document.getElementById('state').addEventListener('change', async function () {
+            const state = this.value;
+            currentState = state;
+            const districtSelect = document.getElementById('district');
+            const forecastBtn = document.getElementById('forecastBtn');
+            if (!state) { districtSelect.disabled = true; districtSelect.innerHTML = '<option value="">-- Choose District --</option>'; forecastBtn.disabled = true; return; }
+            districtSelect.disabled = true;
+            districtSelect.innerHTML = '<option value="">Loading districts...</option>';
+            try {
+                const r = await fetch(`/get_districts/${encodeURIComponent(state)}`);
+                const districts = await r.json();
+                districtSelect.innerHTML = '<option value="">-- Choose District --</option>';
+                districts.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = d; districtSelect.appendChild(o); });
+                districtSelect.disabled = false;
+            } catch (e) { districtSelect.innerHTML = '<option value="">Error loading districts</option>'; }
+        });
+
+        document.getElementById('district').addEventListener('change', function () {
+            currentDistrict = this.value;
+            document.getElementById('forecastBtn').disabled = !this.value;
+        });
+
+        document.getElementById('forecastBtn').addEventListener('click', async function () {
+            if (!currentState || !currentDistrict) return;
+            clearPreviousCharts();
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('loading').classList.remove('hidden');
+            try {
+                const r = await fetch('/forecast', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ state: currentState, district: currentDistrict, num_years: selectedYears }) });
+                const data = await r.json();
+                if (r.ok) { displayResults(data, currentState, currentDistrict); updateActionableInsights(data); }
+                else alert(data.error || 'An error occurred');
+            } catch (e) { alert('Failed to generate forecast: ' + e.message); }
+            finally { document.getElementById('loading').classList.add('hidden'); setTimeout(fetchEmailLogs, 2000); }
+        });
+
+        function updateActionableInsights(data) {
+            const latest = data.forecast[data.forecast.length - 1];
+            let score = 0;
+            if (latest.wl > 8) score += Math.min(30, (latest.wl - 8) * 1.5);
+            score += Math.min(30, Math.max(0, 6.8 - latest.ph, latest.ph - 8.2) * 25);
+            if (latest.no3 > 20) score += Math.min(40, (latest.no3 - 20) * 1.3);
+            score = Math.round(Math.min(100, score));
+            let levelClass = 'color:var(--primary)', progressColor = 'var(--primary)', levelText = 'Healthy';
+            if (score > 70) { levelClass = 'color:#f43f5e'; progressColor = '#f43f5e'; levelText = 'Critical'; }
+            else if (score > 35) { levelClass = 'color:#f59e0b'; progressColor = '#f59e0b'; levelText = 'Warning'; }
+            else if (score > 15) { levelClass = 'color:var(--secondary)'; progressColor = 'var(--secondary)'; levelText = 'Moderate'; }
+            document.getElementById('riskScoreContent').innerHTML = `
+                <div class="risk-meter glass rounded-full" style="border:4px solid rgba(255,255,255,.05)">
+                    <span class="risk-value">${score}</span>
+                </div>
+                <div class="flex-1">
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-textdim">Environmental Security Threshold</span>
+                                <span style="${levelClass};font-weight:700;text-transform:uppercase;letter-spacing:.1em">${levelText}</span>
+                            </div>
+                            <div style="height:6px;width:100%;background:rgba(255,255,255,.05);border-radius:9999px;overflow:hidden">
+                                <div style="height:100%;width:${score}%;background:${progressColor};transition:width 1s ease"></div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-textdim">Synthesized from projected nitrate (${latest.no3}mg/L), pH (${latest.ph}), and depth metrics.</p>
+                    </div>
+                </div>`;
+            const cropList = document.getElementById('cropList');
+            let crops = [], advice = "";
+            if (latest.ph < 6.5) { crops.push("Potato","Berries","Oats"); advice += "Groundwater is slightly acidic. "; }
+            else if (latest.ph > 8.5) { crops.push("Cabbage","Cauliflower","Beets"); advice += "Groundwater is alkaline. "; }
+            else { crops.push("Wheat","Maize","Legumes"); advice += "Groundwater pH is neutral. "; }
+            if (latest.wl > 15) { crops.push("Millet","Sorghum"); advice += "Depth exceeds 15m. "; }
+            if (latest.no3 > 45) advice += "Nitrate levels are elevated. ";
+            else crops.push("Spinach","Lettuce");
+            cropList.innerHTML = [...new Set(crops)].slice(0,6).map(c => `<span class="crop-tag">${c}</span>`).join('');
+            document.getElementById('cropAdvice').innerText = advice;
+        }
+
+        function displayResults(data, state, district) {
+            window._latestForecast = data.forecast[data.forecast.length - 1];
+            window._latestAlerts = data.alerts || [];
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.classList.remove('hidden');
+            document.getElementById('location-info').textContent = `${district}, ${state}`;
+            const lf = data.forecast[data.forecast.length - 1];
+            document.getElementById('latest-metrics').innerHTML = `
+                <div class="glass p-6 text-center border-white/5 hover:border-primary/20 transition">
+                    <div class="text-[10px] font-bold text-textdim mb-2 uppercase tracking-[0.2em]">Water Level (${lf.year})</div>
+                    <div class="text-4xl font-black text-textmain mb-1">${lf.wl} <span class="text-sm font-medium text-textdim">m</span></div>
+                </div>
+                <div class="glass p-6 text-center border-white/5 hover:border-secondary/20 transition">
+                    <div class="text-[10px] font-bold text-textdim mb-2 uppercase tracking-[0.2em]">pH Level (${lf.year})</div>
+                    <div class="text-4xl font-black text-textmain mb-1">${lf.ph}</div>
+                </div>
+                <div class="glass p-6 text-center border-white/5 hover:border-rose-500/20 transition">
+                    <div class="text-[10px] font-bold text-textdim mb-2 uppercase tracking-[0.2em]">Nitrate (${lf.year})</div>
+                    <div class="text-4xl font-black text-textmain mb-1">${lf.no3} <span class="text-sm font-medium text-textdim">mg/L</span></div>
+                </div>`;
+            createChart('wl-chart', data, 'wl', 'Depth (m)', '#2dd4bf');
+            createChart('ph-chart', data, 'ph', 'pH Value', '#38bdf8');
+            createChart('no3-chart', data, 'no3', 'mg/L', '#f43f5e');
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function createChart(elementId, data, key, unit, color) {
+            const t = getChartThemeSettings();
+            Plotly.newPlot(elementId, [
+                { x: data.historical.years, y: data.historical[key], name: 'Historical', type: 'scatter', mode: 'lines+markers', line: { color: t.historicalLine, width: 2, shape: 'spline' } },
+                { x: data.forecast.map(f => f.year), y: data.forecast.map(f => f[key]), name: 'Intelligence', type: 'scatter', mode: 'lines+markers', line: { color: color, width: 3, dash: 'dash', shape: 'spline' } }
+            ], {
+                font: { family: 'system-ui,sans-serif', color: t.textColor },
+                xaxis: { gridcolor: t.gridColor, showgrid: true, zeroline: false },
+                yaxis: { gridcolor: t.gridColor, showgrid: true, zeroline: false },
+                plot_bgcolor: t.plotBg, paper_bgcolor: t.paperBg,
+                showlegend: true, legend: { orientation: 'h', y: 1.05, x: 1, font: { size: 10 } },
+                margin: { l: 40, r: 10, t: 10, b: 40 }, hovermode: 'x unified', autosize: true
+            }, { responsive: true, displayModeBar: false });
+            currentCharts.push(document.getElementById(elementId));
+        }
+
+        let currentMapMode = 'wl', mapDataGlob = [];
+
+        async function loadMapData() {
+            document.getElementById('mapLoading').classList.remove('hidden');
+            try { const r = await fetch('/map_data?year=2024'); mapDataGlob = await r.json(); renderMap(); }
+            catch (e) { console.error(e); }
+            finally { document.getElementById('mapLoading').classList.add('hidden'); }
+        }
+
+        function renderMap() {
+            if (!mapDataGlob.length) return;
+            Plotly.newPlot('india-map', [{
+                type: 'scattermapbox', lat: mapDataGlob.map(d => d.lat), lon: mapDataGlob.map(d => d.lon), mode: 'markers',
+                marker: { size: mapDataGlob.map(d => currentMapMode==='wl'?Math.max(6,Math.min(d.wl*1.5,18)):Math.max(6,Math.min(d.no3/4,18))), color: mapDataGlob.map(d => currentMapMode==='wl'?d.wl:d.no3), colorscale: currentMapMode==='wl'?[[0,'#0ea5e9'],[1,'#020617']]:[[0,'#fef2f2'],[1,'#f43f5e']], showscale: true, colorbar: { thickness: 10, len: 0.5, tickfont: { color: '#94a3b8' } } },
+                text: mapDataGlob.map(d => `${d.district}, ${d.state}<br>${currentMapMode==='wl'?'WL: '+d.wl+'mbgl':'NO3: '+d.no3+'mg/L'}`),
+                hoverinfo: 'text', customdata: mapDataGlob.map(d => ({ state: d.state, district: d.district }))
+            }], { mapbox: { style: 'carto-darkmatter', center: { lat: 21.5, lon: 79.5 }, zoom: 3.8 }, margin: { l:0,r:0,t:0,b:0 }, paper_bgcolor: 'transparent', plot_bgcolor: 'transparent' }, { displayModeBar: false });
+            document.getElementById('india-map').on('plotly_click', (evData) => {
+                const cd = evData.points[0].customdata;
+                const stateSelect = document.getElementById('state');
+                stateSelect.value = cd.state; currentState = cd.state;
+                stateSelect.dispatchEvent(new Event('change'));
+                setTimeout(() => {
+                    const dSelect = document.getElementById('district');
+                    if (dSelect) { dSelect.value = cd.district; currentDistrict = cd.district; document.getElementById('forecastBtn').disabled = false; document.getElementById('forecastBtn').click(); }
+                }, 800);
+            });
+        }
+
+        document.getElementById('mapWlBtn').addEventListener('click', function () {
+            currentMapMode = 'wl';
+            this.style.cssText = 'background:var(--primary);color:var(--bg-page);font-weight:700;font-size:.75rem;padding:.375rem .75rem;border-radius:.5rem';
+            const no3Btn = document.getElementById('mapNo3Btn');
+            no3Btn.style.cssText = 'font-size:.75rem;padding:.375rem .75rem;border-radius:.5rem;color:#94a3b8';
+            renderMap();
+        });
+        document.getElementById('mapNo3Btn').addEventListener('click', function () {
+            currentMapMode = 'no3';
+            this.style.cssText = 'background:#f43f5e;color:#fff;font-weight:700;font-size:.75rem;padding:.375rem .75rem;border-radius:.5rem';
+            const wlBtn = document.getElementById('mapWlBtn');
+            wlBtn.style.cssText = 'font-size:.75rem;padding:.375rem .75rem;border-radius:.5rem;color:#94a3b8';
+            renderMap();
+        });
+
+        async function fetchEmailLogs() {
+            try {
+                const r = await fetch('/email_logs');
+                const logs = await r.json();
+                if (!logs.length) return;
+                document.getElementById('emailLogsTableBody').innerHTML = logs.map(log => `
+                    <tr style="transition:background .15s">
+                        <td class="px-6 py-4 whitespace-nowrap text-xs">${log.timestamp}</td>
+                        <td class="px-6 py-4 text-xs font-medium text-slate-300">${log.recipient}</td>
+                        <td class="px-6 py-4 text-xs">${log.district}, ${log.state}</td>
+                        <td class="px-6 py-4 text-center"><span style="padding:2px 8px;border-radius:4px;font-size:9px;font-weight:700;text-transform:uppercase;background:${log.status==='Success'?'rgba(34,197,94,.1)':'rgba(244,63,94,.1)'};color:${log.status==='Success'?'#4ade80':'#fb7185'}">${log.status}</span></td>
+                    </tr>`).join('');
+            } catch (e) {}
+        }
+
+        window.addEventListener('DOMContentLoaded', () => { loadMapData(); fetchEmailLogs(); });
+
+        // ── CHATBOT: built via JS, appended directly to body ──
+        (function() {
+            // Toggle button
+            var btn = document.createElement('button');
+            btn.id = 'chatbotToggle';
+            btn.title = 'Open AI Assistant';
+            btn.innerHTML = '<svg width="24" height="24" fill="none" stroke="#020617" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>';
+            btn.style.cssText = 'position:fixed;bottom:2rem;right:2rem;z-index:2147483647;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2dd4bf,#38bdf8);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(45,212,191,0.4);transition:transform .2s,box-shadow .2s;pointer-events:all';
+            btn.onmouseenter = function(){ this.style.transform='scale(1.12)'; this.style.boxShadow='0 12px 40px rgba(45,212,191,0.6)'; };
+            btn.onmouseleave = function(){ this.style.transform='scale(1)'; this.style.boxShadow='0 8px 32px rgba(45,212,191,0.4)'; };
+
+            // Panel
+            var panel = document.createElement('div');
+            panel.id = 'chatbotPanel';
+            panel.style.cssText = 'position:fixed;bottom:6rem;right:2rem;z-index:2147483646;width:360px;height:480px;border-radius:1.5rem;background:rgba(10,18,40,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.6);flex-direction:column;overflow:hidden;display:none;pointer-events:all';
+            panel.innerHTML = `
+                <div style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;background:rgba(45,212,191,0.06);flex-shrink:0">
+                    <div style="display:flex;align-items:center;gap:0.6rem">
+                        <div style="width:8px;height:8px;border-radius:50%;background:#2dd4bf;box-shadow:0 0 8px #2dd4bf"></div>
+                        <span style="font-weight:700;font-size:0.875rem;color:#f8fafc;letter-spacing:0.05em">GROUNDWATER AI</span>
+                    </div>
+                    <button id="chatbotClose" style="background:none;border:none;cursor:pointer;color:#94a3b8;padding:4px;line-height:0;pointer-events:all">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <div id="chatMessages" style="flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:0.75rem">
+                    <div style="align-self:flex-start;background:rgba(45,212,191,0.08);border:1px solid rgba(45,212,191,0.2);border-radius:1rem;border-bottom-left-radius:0;padding:0.75rem 1rem;font-size:0.8125rem;color:#cbd5e1;max-width:85%">
+                        Hello! I'm your Groundwater Intelligence assistant. Select a location and run a forecast, then ask me anything.
+                    </div>
+                </div>
+                <form id="chatbotForm" style="padding:0.75rem 1rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:0.5rem;align-items:center;flex-shrink:0;pointer-events:all">
+                    <input id="chatInput" type="text" placeholder="Ask about water quality..." autocomplete="off"
+                        style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:0.75rem;padding:0.6rem 1rem;font-size:0.8125rem;color:#f8fafc;outline:none;pointer-events:all"
+                        onfocus="this.style.borderColor='#2dd4bf'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"/>
+                    <button type="submit" style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2dd4bf,#38bdf8);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;pointer-events:all">
+                        <svg width="16" height="16" fill="none" stroke="#020617" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                    </button>
+                </form>`;
+
+            document.body.appendChild(btn);
+            document.body.appendChild(panel);
+
+            var chatOpen = false;
+            btn.onclick = function(e) {
+                e.stopPropagation();
+                chatOpen = !chatOpen;
+                panel.style.display = chatOpen ? 'flex' : 'none';
+                if (chatOpen) { var inp = document.getElementById('chatInput'); if(inp) setTimeout(function(){ inp.focus(); }, 50); }
+            };
+
+            document.getElementById('chatbotClose').onclick = function(e) {
+                e.stopPropagation();
+                chatOpen = false;
+                panel.style.display = 'none';
+            };
+
+            function appendMessage(sender, text) {
+                var msgs = document.getElementById('chatMessages');
+                var d = document.createElement('div');
+                d.style.cssText = 'max-width:85%;border-radius:1rem;padding:.75rem 1rem;font-size:.8125rem;' + (sender==='user' ? 'align-self:flex-end;background:#2dd4bf;color:#020617;font-weight:600;border-bottom-right-radius:0' : 'align-self:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#cbd5e1;border-bottom-left-radius:0');
+                d.innerHTML = '<p>' + text + '</p>';
+                msgs.appendChild(d);
+                msgs.scrollTop = msgs.scrollHeight;
+            }
+
+            function appendTyping() {
+                var msgs = document.getElementById('chatMessages');
+                var d = document.createElement('div');
+                d.id = 'typingIndicator';
+                d.style.cssText = 'align-self:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:1rem;border-bottom-left-radius:0;padding:.6rem 1rem;font-size:.8rem;color:#64748b;font-style:italic';
+                d.textContent = 'Analyzing...';
+                msgs.appendChild(d);
+                msgs.scrollTop = msgs.scrollHeight;
+            }
+
+            function removeTyping() { var t = document.getElementById('typingIndicator'); if(t) t.remove(); }
+
+            document.getElementById('chatbotForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                var inp = document.getElementById('chatInput');
+                var text = inp.value.trim();
+                if (!text) return;
+                appendMessage('user', text);
+                inp.value = '';
+                appendTyping();
+                try {
+                    var r = await fetch('/chat', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ message: text, context: { state: currentState, district: currentDistrict, latestForecast: window._latestForecast || null, alerts: window._latestAlerts || [] } }) });
+                    var data = await r.json();
+                    removeTyping();
+                    appendMessage('ai', data.response || data.error || 'No response received.');
+                } catch(err) {
+                    removeTyping();
+                    appendMessage('ai', '⚠️ Neural link interrupted. Please try again.');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+/* 
+  Groundwater Forecasting System - Premium Design System
+  Theme: Modern, Dark, Glassmorphic, Environmental
+  NOTE: Google Fonts removed for offline compatibility
+*/
+
+:root {
+  --primary: #2dd4bf;
+  --primary-hover: #14b8a6;
+  --secondary: #38bdf8;
+  --accent: #f43f5e;
+
+  /* Light Mode */
+  --bg-page: #f1f5f9;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --grad-overlay: linear-gradient(to bottom, rgba(241,245,249,0.7) 0%, rgba(241,245,249,0.3) 50%, rgba(241,245,249,0.9) 100%);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --bg-page: #020617;
+  --card-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --grad-overlay: linear-gradient(to bottom, rgba(2,6,23,0.8) 0%, rgba(2,6,23,0.4) 50%, rgba(2,6,23,0.9) 100%);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Segoe UI', Georgia, sans-serif;
+}
+
+.hero-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  background-image: var(--grad-overlay), url('/static/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 0.5s ease;
+  pointer-events: none;
+}
+
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
+  transition: background 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+}
+
+.glass-hover:hover {
+  border-color: rgba(45, 212, 191, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(45, 212, 191, 0.1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #020617 !important;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+}
+
+.risk-meter {
+  position: relative;
+  width: 120px; height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.risk-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.crop-tag {
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+nav {
+  position: fixed;
+  width: 100%; top: 0;
+  z-index: 100;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.chart-container {
+  height: 350px;
+  width: 100%;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-page); }
+::-webkit-scrollbar-thumb { background: var(--text-secondary); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
